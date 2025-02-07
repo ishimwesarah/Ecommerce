@@ -1,0 +1,140 @@
+.footer {
+  background: #111;
+  color: #fff;
+  padding: 40px 60px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+    flex-wrap: wrap; /* Added to wrap items on smaller screens */
+}
+
+.newsletter h3,
+.contact-info h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.subscribe {
+  display: flex;
+  gap: 10px;
+    flex-wrap: wrap; /* Allows input and button to stack on small screens */
+}
+
+.subscribe input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+    background-color: #111;
+    border-bottom: 1px solid #fff; /* Changed border-bottom color to work properly */
+  color: white;
+}
+
+.subscribe button {
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+    flex-wrap: wrap; /* Added to wrap items on smaller screens */
+}
+
+.footer-links {
+  display: flex;
+  gap: 50px;
+    flex-wrap: wrap; /* Added to wrap links on smaller screens */
+    margin-bottom: 20px; /* Added some space below the links */
+
+}
+
+.footer-links h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 5px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  font-size: 24px;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.payment-icons {
+    display: flex;
+    flex-wrap: wrap; /* added to wrap payment icons */
+  justify-content:center; /* centers payment logos */
+}
+
+.payment-icons img {
+  width: 200px;
+  height: auto;
+  margin: 0 10px; 
+  margin-bottom: 20px;
+}
+
+
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+
+/* Small screens (phones, less than 768px) */
+@media (max-width: 767px) {
+    .footer {
+      padding: 20px; /* Adjust padding */
+    }
+  
+  .footer-top,
+  .footer-bottom {
+    flex-direction: column; /* Stack on top of each other */
+      align-items: center; /* center items vertically */
+  }
+     .subscribe {
+        flex-direction: column; /*Stack the input and button */
+        width: 100%; /* input and button take up entire width */
+        align-items: start; /* aligns the elements to the left */
+     }
+    .subscribe input{
+        width: 90%;
+        margin-bottom: 10px; /* added spacing between items */
+    }
+
+  .footer-links {
+    gap: 20px; /* Reduce the spacing */
+    flex-direction: column; /* Stack links vertically */
+      text-align: center; /* center links on smaller screens */
+      margin-bottom: 20px; /* added more spacing between the links */
+  }
+    .payment-icons img {
+        width: 150px;
+    }
+
+}
+
+/* Medium screens (tablets, 768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .footer {
+    padding: 30px; /* Adjust padding */
+  }
+
+    .payment-icons img {
+        width: 180px;
+    }
+
+}

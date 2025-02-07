@@ -1,0 +1,142 @@
+.pagecontainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Georgia', serif; /* A more elegant, readable font */
+    color: #333;
+    line-height: 1.7;
+}
+
+.heading {
+    font-size: 3rem; /* Increase size significantly */
+    margin-bottom: 30px; /* Add more space below */
+    text-align: left; /* Align to left */
+    font-weight: 500; /* Less bold, but still prominent */
+    line-height: 1.3;
+    color: #222; /* Darker color for better contrast */
+    letter-spacing: -0.02em; /* Slightly adjust letter spacing */
+    font-family: 'Playfair Display', serif; /* A more distinct, stylish font for headings */
+}
+.pagecontainer img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px; /* Increased for more visual separation */
+    border-radius: 8px; /* Slightly round the corners */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* More pronounced shadow */
+}
+.pagecontainer > div {
+    margin-bottom: 30px; /* Consistent spacing */
+}
+.pagecontainer p {
+    font-size: 1.15rem; /* Slightly increase base font size */
+    color: #444;
+    margin-bottom: 15px; /* More space between paragraphs */
+}
+
+.pagecontainer b,
+.pagecontainer strong {
+    font-weight: 600; /* Make bold text more prominent */
+    color: #333; /* Ensure bold text has good contrast */
+}
+
+.pagecontainer blockquote {
+    font-size: 1.3rem;
+    color: #555;
+    border-left: 5px solid #ddd; /* Subtler border */
+    padding-left: 25px;
+    margin: 30px 0; /* Adjust spacing */
+    font-style: italic;
+    quotes: "\\201C""\\201D""\\2018""\\2019";
+}
+.pagecontainer blockquote:before {
+    content: open-quote;
+    font-size: 4.5em; /* Slightly larger */
+    line-height: 0.1em;
+    margin-right: 0.3em; /* Adjust spacing */
+    vertical-align: -0.4em;
+    color: #eee; /* Even lighter color */
+}
+
+.pagecontainer blockquote p {
+    display: inline;
+}
+
+.pagecontainer blockquote footer {
+    font-size: 0.95rem;
+    font-style: normal;
+    margin-top: 15px; /* Adjust spacing */
+    text-align: right;
+    color: #666;
+}
+.share-section {
+    margin-top: 50px;
+    border-top: 1.5px solid #eee; /* Slightly thicker line */
+    padding-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.share-label {
+    font-size: 0.95rem;
+    color: #666;
+    text-transform: uppercase; /* Make share label uppercase */
+    letter-spacing: 0.05em;
+}
+.social-icons {
+    display: flex;
+    gap: 15px; /* More spacing */
+}
+.social-icons a {
+    color: #444;
+    font-size: 1.3rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.social-icons a:hover {
+    color: #222; /* Darker on hover */
+}
+.article-navigation {
+    margin-top: 40px;
+    border-top: 1.5px solid #eee;
+    padding-top: 25px;
+    font-size: 0.95rem;
+    color: #666;
+}
+.article-navigation a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.article-navigation a:hover {
+    text-decoration: underline;
+    color: #555; /* Slightly different on hover */
+}
+
+@media (max-width: 768px) {
+    .heading {
+        font-size: 2.4rem; /* Adjust for smaller screens */
+        margin-bottom: 20px;
+    }
+
+    .pagecontainer > div {
+        margin-bottom: 20px; /* Consistent spacing */
+    }
+
+    .share-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .share-label {
+        margin-bottom: 10px;
+    }
+
+    .social-icons {
+        justify-content: flex-start;
+    }
+
+    .social-icons a {
+        font-size: 1.2rem; /* Slightly smaller icons */
+    }
+}

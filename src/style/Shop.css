@@ -1,0 +1,349 @@
+.shop-container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Add this style */
+.shop-header {
+    margin-bottom: 30px;
+}
+
+.top-image {
+    position: relative; /* Make this a positioning context for absolute children */
+    display: flex;
+    width: 100%;
+    padding: 0%;
+}
+
+.shop-title-overlay {
+    position: absolute; /* Absolutely position the text */
+    top: 50%;          /* Vertically center */
+    left: 50%;         /* Horizontally center */
+    transform: translate(-50%, -50%); /* Adjust for the element's own size */
+    font-size: 3rem;    /* Adjust size as needed */
+    color: white;       /* Or any color you want */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    z-index: 1;          
+    
+    width: 100%; /* Ensure text doesn't overflow */
+    color: black;
+}
+
+.shop-title {
+    font-size: 2rem;
+    margin-bottom: 10px; /* Reduced margin for title */
+    text-align: left;
+}
+
+
+
+.shop-content {
+    display: flex;
+    gap: 20px;
+}
+
+.filters {
+    width: 25%;
+    padding-right: 20px;
+}
+
+.filter-group {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.filter-group h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.filter-group ul {
+    list-style: none;
+    padding: 0;
+}
+
+.filter-group ul li {
+    padding: 5px 0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-group ul li:hover {
+    text-decoration: underline;
+}
+
+.color-filter {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.color-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
+
+.rating-filter div {
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.price-filter {
+  margin-top: 10px;
+}
+
+.price-slider-container {
+   display: flex;
+   flex-direction: column;
+}
+
+.price-slider-container input[type="range"] {
+    width: 100%;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.price-range {
+    display: flex;
+    justify-content: space-between;
+}
+
+.products {
+    flex: 1;
+    text-align: left;
+}
+
+.products-header {
+   display: flex;
+   justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sorting select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+    margin-left: 10px;
+}
+
+.view-icons {
+    margin-left: 10px;
+    display: flex;
+}
+
+.view-icons svg {
+    cursor: pointer;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.product {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.product-title {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.product-price {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.star-container {
+  display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.star-container svg {
+  color: gold;
+    margin: 0 1px;
+}
+
+.color-options {
+        display: flex;
+        gap: 5px;
+          justify-content: center;
+    }
+    .color-option {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    
+.pagination {
+  text-align: center;
+    margin-top: 20px;
+}
+
+.pagination span {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  margin: 0 3px;
+    border-radius: 4px;
+}
+
+.pagination span:hover{
+    background-color: #e0e0e0;
+}
+
+.pagination span:first-child {
+   background-color: #4a94d6;
+    color: #fff;
+     border: 1px solid #4a94d6;
+}
+.pagination span:first-child:hover {
+   background-color: #4a94d6;
+    color: #fff;
+}
+
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+
+/* Small screens (phones, less than 767px) */
+@media (max-width: 767px) {
+  .shop-container {
+    width: 95%; /* more space for smaller screen */
+    padding: 10px; /*reduce padding */
+  }
+
+    .shop-title-overlay {
+        font-size: 2rem; /* Adjust font size for smaller screens */
+    }
+
+  .shop-content {
+    flex-direction: column; /* Stack filters and products on small screens */
+      gap: 10px;
+  }
+  .filters {
+    width: 100%;
+    padding-right: 0; /* remove padding from filter section */
+    margin-bottom: 20px;
+  }
+
+  .products {
+    width: 100%; /* products takes 100% on mobile */
+  }
+   .products-grid {
+       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+    .sorting {
+        text-align: left; /* align left the sorting on smaller screens */
+    }
+    .view-icons {
+        margin-top: 10px; /* add space between sorting and icons */
+        justify-content: flex-start; /*align the view icons to the left*/
+    }
+
+   .product-price {
+       font-size: 0.8rem; /* reduce product price font size*/
+   }
+    .star-container svg {
+        font-size: 12px; /* reduce star rating size*/
+    }
+}
+
+/* Medium screens (tablets, 768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .shop-container{
+        width: 95%; /* more space for tablet */
+    }
+  .filters {
+    width: 30%;
+  }
+   .products-grid {
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* adjust columns on tablets*/
+       gap: 20px;
+    }
+}
+/* Large Screens (desktops, 992px to 1200px) */
+@media (min-width: 992px) and (max-width: 1200px) {
+     .filters {
+      width: 20%; /* reduce the filter width on smaller desktops */
+    }
+}
+/* Existing CSS Here (from previous response) */
+
+/* Add the following CSS */
+
+.product-image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.product-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: none; /* Semi-transparent white background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.product:hover .product-overlay {
+    opacity: 1;
+}
+
+.product-overlay-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.select-options-button,
+.quick-view-button {
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.select-options-button {
+    background-color: black;
+    color: white;
+}
+
+.quick-view-button {
+    background-color: black;
+    color: white;
+}
+ .heart-icon {
+     position: absolute;
+     top: 10px;
+     right: 10px;
+     font-size: 1.2rem;
+     background-color: white;
+ }

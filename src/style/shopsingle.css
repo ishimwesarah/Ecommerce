@@ -1,0 +1,133 @@
+.shop-single-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.product-view {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.product-image {
+    flex: 1;
+    max-width: 45%;
+}
+
+.product-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-details {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.product-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.product-rating {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.product-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.product-description {
+    font-size: 1rem;
+    color: #555;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-controls button {
+    background-color: #ddd;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.quantity-controls input {
+    width: 40px;
+    text-align: center;
+}
+
+.add-to-cart-btn {
+    background-color: #333;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.wishlist {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #777;
+    cursor: pointer;
+}
+
+.related-products {
+    margin-top: 40px;
+}
+
+.related-items {
+    display: flex;
+    gap: 20px;
+}
+
+.related-product {
+    width: 200px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.related-product img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .product-view {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-image, .product-details {
+        max-width: 100%;
+    }
+
+    .related-items {
+        flex-direction: column;
+    }
+
+    .related-product {
+        width: 100%;
+    }
+}
