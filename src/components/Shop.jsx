@@ -1,7 +1,7 @@
 import React, { useState } from 'react'; // Import useState
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faStarHalfAlt, faBars, faTh, faHeart } from "@fortawesome/free-solid-svg-icons"; // Import heart icon
-import '../style/shop.css';
+
 import { useNavigate } from 'react-router-dom';
 import image1 from '../assets/bootle.jpg';
 import image2 from '../assets/alexa.jpg';
@@ -13,6 +13,7 @@ import image7 from '../assets/shop7.jpg';
 import image8 from '../assets/shop8.jpg';
 import image9 from '../assets/hiii.jpg';
 import image10 from '../assets/shop9.jpg';
+import '../style/Shop.css';
   
   const categories = [
     { name: 'Body Lotion', count: 1 },
