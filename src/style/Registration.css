@@ -43,15 +43,21 @@
 }
 
 /* Basic button styling */
-.registration-card button {
+/* .registration-card button {
   background-color: #007bff;
   color: white;
   border: none;
   padding: 10px 15px;
   border-radius: 4px;
   cursor: pointer;
-}
+} */
 
 .registration-card button:hover {
+  background-color: #0056b3;
+}
+.google-registration, .apple-registration{
+  background-color: white;
+}
+.registration-button{
   background-color: #0056b3;
 }

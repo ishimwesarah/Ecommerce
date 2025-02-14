@@ -21,6 +21,7 @@ const Navbar = () => {
       <div className="navbar-top">
      
         <h1 className="logo">Botiga</h1>
+        <Link to='/submitform'>view</Link>
        
         {/* Search & Categories */}
         <div className="search-container">

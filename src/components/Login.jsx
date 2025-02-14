@@ -8,6 +8,8 @@ const Login = ({ isOpen, onClose }) => {  // Added props: isOpen and onClose
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
+  const Login = ({ isOpen, onClose }) => {
+    const { openRegistration } = useContext(LoginContext);}
 
   const handleLogin = (e) => {
     e.preventDefault();

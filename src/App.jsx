@@ -12,6 +12,10 @@ import SinglePage from './components/SinglePage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import VendorSingle from './components/vendorsinglepage';
 import ShopSingle from './components/shopsingle';
+import HomeProduct from './components/HomeProduct';
+import DashboardLayout from './Dashboard/DashboardLayout';
+import DashboardView from './Dashboard/DashboardView';
+import ProductList from './Dashboard/Product.jsx';
 function App() {
   return (
     <BrowserRouter classname='app-container'>
@@ -27,11 +31,18 @@ function App() {
           <Route path="/singlecard/:id" element={<SinglePage/>}/> 
           <Route path="/vendorsible/:id" element={<VendorSingle/>}/> 
           <Route path="/shopping/:id" element={<ShopSingle/>}/> 
-
+          <Route path='/submitform' element={<HomeProduct/>}/>
 
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Registration />} />
+
+        <Route path='/' element={<DashboardLayout/>}>
+        <Route path='/dashboard' index element={<DashboardView/>}/>
+        <Route path='/product' element={<ProductList/>}/>
+        </Route>
+        
+        
         
       </Routes>
     </BrowserRouter>

@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import '../style/Registration.css';
-import logo from '../assets/spider.jpg';
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
+import Login from './Login'; // Import the Login component
 
-const Registration = () => {
+const Registration = ({isOpen, onClose}) => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [isLoginOpen, setIsLoginOpen] = useState(false); // State to control the login popup
 
   const handleRegistration = (e) => {
     e.preventDefault();
@@ -19,9 +20,21 @@ const Registration = () => {
     console.log('Confirm Password:', confirmPassword);
   };
 
+  const openLogin = () => {
+    setIsLoginOpen(true);
+  };
+
+  const closeLogin = () => {
+    setIsLoginOpen(false);
+  };
+  
+
   return (
     <div className="registration-container">
       <div className="registration-card">
+      <button className="close-button" onClick={onClose}>
+          X
+        </button>
         <div className="registration-header">
           <h1>Botiga</h1>
           <h2 className="registration-title">Create an account</h2>
@@ -73,13 +86,15 @@ const Registration = () => {
         </div>
         <div className="registration-options">
           <span>Already have an account?</span>
-          <a href="/login" className="login-link">
+          <button  className="login-link" onClick={openLogin}>
             Login
-          </a>
+          </button>
         </div>
       </div>
+       <Login isOpen={isLoginOpen} onClose={closeLogin} /> {/* Render the Login component conditionally */}
     </div>
   );
 };
 
 export default Registration;
+

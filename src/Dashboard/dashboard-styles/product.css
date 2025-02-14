@@ -1,0 +1,144 @@
+/* ProductList.css */
+
+.product-list-container {
+    width: 80%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    margin-left: 20%;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .header h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .header-actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  .add-product-button {
+    background-color: #2f557b;
+    color: #fff;
+    border: none;
+    
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+    margin-right: 10px;
+    width: 100px;
+    align-items: center;
+  }
+  
+  .add-product-button:hover {
+    background-color: #1a1ae4;
+  }
+  
+  .month-select {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #555;
+    background-color: #fff;
+  }
+  
+  .product-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .product-table th,
+  .product-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .product-table th {
+    font-weight: 500;
+    color: #777;
+  }
+  
+  .product-table tbody tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .product-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .product-info img {
+    width: 50px;
+    margin-right: 10px;
+    border-radius: 4px;
+  }
+  
+  .product-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .product-name {
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  
+  .product-sizes {
+    font-size: 12px;
+    color: #777;
+  }
+  
+  .rating {
+    display: inline-flex;
+    align-items: center;
+    background-color: #fff9ed;
+    color: #ffc107;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-right: 5px;
+  }
+  
+  .star {
+    margin-right: 3px;
+    font-size: 14px;
+  }
+  
+  .actions {
+    text-align: center;
+  }
+  
+  .action-button {
+    background-color: #fff9ed;
+    color: #ff7849;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 8px;
+    margin: 0 3px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .action-button:hover {
+    background-color: #ffe5db;
+  }
+  
+  /* Font Awesome Icons (you may need to install it) */
+  .fa {
+    font-size: 14px;
+  }

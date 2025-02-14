@@ -1,0 +1,437 @@
+.dashboard-view-container {
+    display: flex;
+    height: 100vh;
+    padding-top: 70px;
+  }
+  
+  .dashboard-sidebar {
+    width: 250px; /* Sidebar width */
+    background-color: #2c3e50; /* Sidebar background */
+    color: #fff;
+    padding: 20px;
+    position: fixed; /* Make the sidebar fixed */
+    height: 100vh; /* Full-height sidebar */
+    top: 0;
+    left: 0;
+    overflow-y: auto; /* Enable scrolling for longer content */
+  }
+  
+  .dashboard-main {
+    margin-left: 250px; /* Offset by the sidebar width */
+    padding: 20px;
+    background-color: #f5f5f5;
+    flex-grow: 1;
+  }
+  
+  .dashboard-content {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .click-text {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  /* DashboardView.css */
+.dashboard-view-container {
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Stack cards vertically */
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #f7f7fa; /* Light gray background */
+}
+
+.dashboard-content {
+  width: 100%;
+}
+
+/* Card Styling */
+.dashboard-card {
+  background-color: #fff; /* White card background */
+  border-radius: 5px; /* Slightly rounded corners */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 20px;
+  margin-bottom: 15px; /* Spacing between cards */
+  text-align: center;
+  width: 50%;
+}
+
+.dashboard-card-icon-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px; /* Space between icon and title */
+}
+
+.dashboard-card-icon {
+  background-color: #2f557b; /* Orange background for icon */
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.dashboard-card-title {
+  font-size: 16px;
+  color: #333; /* Darker title color */
+  margin-bottom: 5px;
+}
+
+.dashboard-card-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000; /* Black value color */
+  margin-bottom: 10px;
+}
+
+.dashboard-card-percentage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+
+
+.dashboard-card-view-more-link {
+  color: #4299e1;
+  text-decoration: none;
+  font-size: 14px; /* Smaller font size for the link */
+}
+
+.dashboard-card-view-more-link:hover {
+  text-decoration: underline;
+}
+.this{
+display: flex;
+flex-wrap: wrap; /* Allow items to wrap to the next line */
+justify-content: space-around; /* Distribute items evenly with space around them */
+width: 100%; /* ensure the container takes up full width */
+padding: 20px; /* adding padding around whole content */
+
+}
+.itemss{
+    width: calc(50% - 40px); /* Adjust as needed for desired width and spacing */
+    margin-bottom: 20px; /* Add spacing between rows */
+    box-sizing: border-box; 
+}
+/* Lower.css */
+
+.lower-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f7f7f7; /* Optional background */
+  font-family: sans-serif;
+  margin-left: 20%;
+}
+
+.lower-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 350px;
+  
+}
+
+.card-header {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Conversions Section */
+.conversions .donut-chart {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  position: relative; /* Position context for donut hole */
+  background: conic-gradient(
+    #4299e1 65.2%,
+    #e9ecef 0
+  ); /* Orange fill */
+  margin-bottom: 10px;
+}
+
+.conversions .donut-hole {
+  width: 70px; /* Adjust size to control thickness of donut */
+  height: 70px; /* Adjust size to control thickness of donut */
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333;
+}
+
+.conversions .returning-customer {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.conversion-stats {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.conversion-stats p {
+  margin: 0;
+  text-align: center;
+}
+
+.conversion-stats .this-week,
+.conversion-stats .last-week {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.conversion-stats p:nth-child(2) {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.view-details-button {
+  background-color: #e9ecef;
+  color: #333;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 80%;
+}
+
+.view-details-button:hover {
+  background-color: #d1d5db;
+}
+
+/* Sessions Section */
+.sessions .map-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  opacity: 0.8; /* Subtle visual effect */
+}
+
+.session-stats {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.session-stats div {
+  text-align: center;
+}
+
+.session-stats p:nth-child(2) {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Top Pages Section */
+.top-pages-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-pages .view-all-button {
+  background-color: transparent;
+  border: none;
+  color: #ff8c69;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.top-pages .view-all-button:hover {
+  color: #ff5722;
+}
+
+.top-pages-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.top-pages-table th,
+.top-pages-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.top-pages-table th {
+  font-weight: bold;
+  color: #555;
+}
+
+.exit-rate {
+  text-align: right;
+  color: #4caf50;
+  font-size: 0.85rem;
+}
+
+.exit-rate.negative {
+  color: #f44336;
+}
+
+.table-scroll-bar {
+  width: 100%;
+  height: 5px;
+  background-color: #e9ecef;
+  border-radius: 3px;
+  margin-top: 10px;
+}
+
+.scroll-thumb {
+  width: 30%; /* Adjust based on content size */
+  height: 100%;
+  background-color: #999;
+  border-radius: 3px;
+}
+.byaw{
+  box-shadow: 2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow:1px 1px 3px rgba(0, 0, 0, 0.1);
+  
+}
+/* OrderTable.css */
+
+.order-table-container {
+  width: 70%;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  margin-left: 20%;
+  
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.create-order-button {
+  background-color: #bbbbf2;
+  color: #2f557b;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.create-order-button:hover {
+  background-color: #ffe5db;
+}
+
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.order-table th,
+.order-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+  color: #555;
+}
+
+.order-table th {
+  font-weight: 500;
+  color: #777;
+}
+
+.order-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.status {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.status.completed {
+  background-color: #28a745;
+}
+
+.status.processing {
+  background-color: #ffc107;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  color: #777;
+  font-size: 14px;
+}
+
+.pagination-buttons button {
+  border: 1px solid #ddd;
+  background-color: white;
+  color: #555;
+  padding: 6px 12px;
+  margin: 0 3px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.pagination-buttons button:hover {
+  background-color: #f0f0f0;
+}
+
+.pagination-buttons button.active {
+  background-color: #2f557b;
+  color: white;
+  border-color: #2f557b;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #999;
+  font-size: 12px;
+}
+
+.order-table img{
+  width: 30px;
+}
