@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { FaTachometerAlt, FaBoxOpen, FaTags, FaWarehouse, FaShoppingCart, FaClipboardList, FaFileInvoice, FaCog, FaArrowRight, FaUsers } from 'react-icons/fa';
+import{ useState } from 'react';
+import { FaTachometerAlt, FaBoxOpen, FaTags,  FaShoppingCart, FaClipboardList, FaFileInvoice, FaArrowRight } from 'react-icons/fa';
 import '../Dashboard/dashboard-styles/Sidebar.css';
 import { GrContact } from "react-icons/gr";
 
@@ -36,31 +36,31 @@ const Sidebar = () => {
 
             <div className="nav-item">
                 <FaTags />
-                {!isCollapsed && <span className="nav-item-text">Category</span>}
+              <a href='/category' style={{ color: 'inherit', textDecoration: 'none' }}>  {!isCollapsed && <span className="nav-item-text">Category</span>}</a>
                 {!isCollapsed && <div className="nav-dropdown"><FaArrowRight /></div>}
             </div>
 
             <div className="nav-item">
                 <FaShoppingCart />
-                {!isCollapsed && <span className="nav-item-text">Orders</span>}
+                <a href='/Orders' style={{ color: 'inherit', textDecoration: 'none' }}>   {!isCollapsed && <span className="nav-item-text">Orders</span>}</a>
                 {!isCollapsed && <div className="nav-dropdown"><FaArrowRight /></div>}
             </div>
 
             <div className="nav-item">
                 <FaClipboardList />
-                {!isCollapsed && <span className="nav-item-text">Purchases</span>}
+                <a href='/Vendors' style={{ color: 'inherit', textDecoration: 'none' }}>   {!isCollapsed && <span className="nav-item-text">Vendors</span>}</a>
                 {!isCollapsed && <div className="nav-dropdown"><FaArrowRight /></div>}
             </div>
 
             <div className="nav-item">
                 <GrContact />
-                {!isCollapsed && <span className="nav-item-text">Contacts</span>}
+                <a href='/Blogs' style={{ color: 'inherit', textDecoration: 'none' }}>   {!isCollapsed && <span className="nav-item-text">Blogs</span>}</a>
                 {!isCollapsed && <div className="nav-dropdown"><FaArrowRight /></div>}
             </div>
 
             <div className="nav-item">
                 <FaFileInvoice />
-                {!isCollapsed && <span className="nav-item-text">Invoices</span>}
+                <a href='/Contacts' style={{ color: 'inherit', textDecoration: 'none' }}>   {!isCollapsed && <span className="nav-item-text">Contacts</span>}</a>
                 {!isCollapsed && <div className="nav-dropdown"><FaArrowRight /></div>}
             </div>
 

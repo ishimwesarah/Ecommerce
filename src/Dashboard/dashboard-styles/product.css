@@ -27,7 +27,7 @@
     align-items: center;
   }
   
-  .add-product-button {
+  .add-product-buttony {
     background-color: #2f557b;
     color: #fff;
     border: none;
@@ -74,7 +74,7 @@
   }
   
   .product-table tbody tr:hover {
-    background-color: #f9f9f9;
+    background-color: #c8d0fa;
   }
   
   .product-info {
@@ -106,8 +106,8 @@
   .rating {
     display: inline-flex;
     align-items: center;
-    background-color: #fff9ed;
-    color: #ffc107;
+    background-color: #c8d0fa;
+    color: #2f557b;
     padding: 3px 6px;
     border-radius: 4px;
     font-size: 12px;
@@ -124,8 +124,8 @@
   }
   
   .action-button {
-    background-color: #fff9ed;
-    color: #ff7849;
+    background-color: #c8d0fa;
+    color: #2f557b;
     border: none;
     border-radius: 4px;
     padding: 6px 8px;
@@ -141,4 +141,5 @@
   /* Font Awesome Icons (you may need to install it) */
   .fa {
     font-size: 14px;
+    color: #2f557b;
   }

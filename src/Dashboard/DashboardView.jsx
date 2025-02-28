@@ -1,328 +1,151 @@
-import React, { useState } from 'react';
-import { ResponsiveContainer, BarChart, Bar, Cell } from 'recharts';
-import { FaShoppingCart, FaAward, FaBriefcase, FaDollarSign } from 'react-icons/fa';
-import '../Dashboard/dashboard-styles/dashvie.css';
-import image1 from '../assets/blog1.jpg'
-import image2 from '../assets/body.jpg'
-import image3 from '../assets/shop5.jpg'
-import image4 from '../assets/mobile.jpg'
-import image5 from '../assets/headset.jpg'
+import React from 'react';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Legend } from 'recharts';
+import './dashboard-styles/dashvie.css';
 
-
-const DashboardCard = ({ icon, title, value, percentage, period, viewMore }) => {
-  return (
-    <div className="dashboard-card">
-      <div className="icon">{icon}</div>
-      <div className="details">
-        <h3>{title}</h3>
-        <p className="value">{value}</p>
-        <p className="percentage">
-          {percentage > 0 ? '+' : ''}
-          {percentage}% ({period})
-        </p>
-      </div>
-      {viewMore && <p className='byaw'>View More</p>}
-    </div>
-  );
-};
-const orders = [
-  {
-    orderId: '#RB5625',
-    date: '29 April 2024',
-    product: 'Laptop',
-    customerName: 'Anna M. Hines',
-    emailId: 'anna.hines@mail.com',
-    phoneNo: '(+1)-555-1564-261',
-    address: 'Burr Ridge/Illinois',
-    paymentType: 'Credit Card',
-    status: 'Completed',
-    productImage: image1
-  },
-  {
-    orderId: '#RB9652',
-    date: '25 April 2024',
-    product: 'Camera',
-    customerName: 'Judith H. Fritsche',
-    emailId: 'judith.fritsche.com',
-    phoneNo: '(+57)-305-5579-759',
-    address: 'SULLIVAN/Kentucky',
-    paymentType: 'Credit Card',
-    status: 'Completed',
-    productImage: image2
-  },
-  {
-    orderId: '#RB5984',
-    date: '25 April 2024',
-    product: 'Smartwatch',
-    customerName: 'Peter T. Smith',
-    emailId: 'peter.smith@mail.com',
-    phoneNo: '(+33)-655-5187-93',
-    address: 'Yreka/California',
-    paymentType: 'Pay Pal',
-    status: 'Completed',
-    productImage: image3
-  },
-  {
-    orderId: '#RB3625',
-    date: '21 April 2024',
-    product: 'Mobile',
-    customerName: 'Emmanuel J. Delcid',
-    emailId: 'emmanuel.delicid@mail.com',
-    phoneNo: '(+30)-693-5553-637',
-    address: 'Atlanta/Georgia',
-    paymentType: 'Pay Pal',
-    status: 'Processing',
-    productImage: image4
-  },
-  {
-    orderId: '#RB8652',
-    date: '18 April 2024',
-    product: 'Headphone',
-    customerName: 'William J. Cook',
-    emailId: 'william.cook@mail.com',
-    phoneNo: '(+91)-855-5446-150',
-    address: 'Rosenberg/Texas',
-    paymentType: 'Credit Card',
-    status: 'Processing',
-    productImage: image5
-  },
+const salesData = [
+    { month: 'Jan', revenue: 12000 },
+    { month: 'Feb', revenue: 15500 },
+    { month: 'Mar', revenue: 18000 },
+    { month: 'Apr', revenue: 20000 },
+    { month: 'May', revenue: 23000 },
+    { month: 'Jun', revenue: 25000 }
 ];
-const DashboardView = () => {
-  const [data] = useState([
-    { name: 'Page A', uv: 4000, pv: 2400, amt: 2400 },
-    { name: 'Page B', uv: 3000, pv: 1398, amt: 2210 },
-    { name: 'Page C', uv: 2000, pv: 9800, amt: 2290 },
-    { name: 'Page D', uv: 2780, pv: 3908, amt: 2000 },
-    { name: 'Page E', uv: 1890, pv: 4800, amt: 2181 },
-    { name: 'Page F', uv: 2390, pv: 3800, amt: 2500 },
-    { name: 'Page G', uv: 3490, pv: 4300, amt: 2100 },
-  ]);
-  const [activeIndex, setActiveIndex] = useState(0);
 
-  const handleClick = (data, index) => {
-    setActiveIndex(index);
-  };
+const revenueBreakdown = [
+    { name: 'Online Sales', value: 40000 },
+    { name: 'In-Store Sales', value: 15000 },
+    { name: 'Wholesale', value: 10000 }
+];
 
-  const activeItem = data[activeIndex];
-  const hello = [
-    {
-      id: 1,
-      icon: <FaShoppingCart size={30} color="#4299e1" />,
-      title: 'Total Orders',
-      value: '13,647',
-      percentage: 2.3,
-      period: 'Last Week',
-      viewMore: true,
-    },
-    {
-      id: 2,
-      icon: <FaAward size={30} color="#4299e1" />,
-      title: 'New Leads',
-      value: '9,526',
-      percentage: 8.1,
-      period: 'Last Month',
-      viewMore: true,
-    },
-    {
-      id: 3,
-      icon: <FaBriefcase size={30} color="#4299e1" />,
-      title: 'Deals',
-      value: '976',
-      percentage: -0.3,
-      period: 'Last Month',
-      viewMore: true,
-    },
-    {
-      id: 4,
-      icon: <FaDollarSign size={30} color="#4299e1" />,
-      title: 'Booked Revenue',
-      value: '$123.6k',
-      percentage: -10.6,
-      period: 'Last Month',
-      viewMore: true,
-    },
-  ];
-  const pageData = [
-    { path: 'http://localhost:5173/shop', views: 465, exit: 4.4 },
-    { path: 'http://localhost:5173/Vendor', views: 426, exit: 20.4 },
-    { path: 'http://localhost:5173/Blog', views: 254, exit: 12.2 },
-    { path: 'larkon/auth-login.html', views: 3369, exit: 5.2 },
-    { path: 'larkon/email.html', views: 985, exit: 64.2 },
-    { path: 'larkon/social.html', views: 653, exit: 2.4 },
-    { path: 'larkon/blog.html', views: 478, exit: 1.4 },
-  ];
+const COLORS = ['#8884d8', '#82ca9d', '#ffc658'];
 
-    const countryData = [
-    { country: 'Canada', sessions: 23.5, lastWeekSessions: 41.05 },
-    { country: 'United States', sessions: 23.5, lastWeekSessions: 41.05 },
-    { country: 'Russia', sessions: 23.5, lastWeekSessions: 41.05 },
-    { country: 'China', sessions: 23.5, lastWeekSessions: 41.05 },
-    { country: 'Brazil', sessions: 23.5, lastWeekSessions: 41.05 },
-  ];
+const products = [
+    { name: 'iPhone 15', price: '$799', stock: 25 },
+    { name: 'MacBook Pro', price: '$1,299', stock: 10 },
+    { name: 'AirPods Pro', price: '$249', stock: 40 }
+];
 
-  return (
-    <div className="dashboard-view-container">
-      <div className="dashboard-main">
-        <div className="this">
-          {hello.map((item) => (
-            <DashboardCard key={item.id} {...item} className="itemss" />
-          ))}
-        </div>
-        <div className="dashboard-content">
-          <p className="click-text">Click each rectangle</p>
-          <ResponsiveContainer width="100%" height={100}>
-            <BarChart data={data}>
-              <Bar dataKey="uv" onClick={handleClick}>
-                {data.map((entry, index) => (
-                  <Cell
-                    cursor="pointer"
-                    fill={index === activeIndex ? '#82ca9d' : '#8884d8'}
-                    key={`cell-${index}`}
-                  />
-                ))}
-              </Bar>
-            </BarChart>
-          </ResponsiveContainer>
-          <p className="content">{`Uv of "${activeItem.name}": ${activeItem.uv}`}</p>
-        </div>
+const categories = ['Electronics', 'Fashion', 'Home & Kitchen', 'Beauty', 'Sports'];
 
-        
-      </div>
-      <div className="lower-container">
-      {/* Conversions */}
-      <div className="lower-card">
-        <div className="card-header">Conversions</div>
-        <div className="card-body conversions">
-          <div className="donut-chart">
-            <div className="donut-segment"></div>
-            <div className="donut-hole">65.2%</div>
-          </div>
-          <p className="returning-customer">Returning Customer</p>
-          <div className="conversion-stats">
-            <div className="this-week">
-              <p>This Week</p>
-              <p>23.5k</p>
+const orders = [
+    { id: '#1012', customer: 'John Doe', amount: '$120.50', status: 'Completed' },
+    { id: '#1013', customer: 'Sarah Smith', amount: '$90.00', status: 'Pending' },
+    { id: '#1014', customer: 'Michael Johnson', amount: '$145.20', status: 'Shipped' }
+];
+
+const vendors = [
+    { name: 'Apple', totalSales: '$50,000' },
+    { name: 'Samsung', totalSales: '$35,000' },
+    { name: 'Nike', totalSales: '$20,000' }
+];
+
+const blogs = [
+    { title: 'Top 10 Tech Trends in 2025', author: 'Admin', date: 'Feb 25, 2025' },
+    { title: 'How to Improve Your Online Store', author: 'Jane Doe', date: 'Feb 20, 2025' },
+    { title: 'Best E-commerce Strategies for Growth', author: 'John Smith', date: 'Feb 15, 2025' }
+];
+
+const Dashboard = () => {
+    return (
+        <div className="dashboard-container">
+            {/* Sales Overview Section */}
+            <div className="sales-overview">
+                <h2 className="section-title">Sales Overview</h2>
+                <div className="sales-metrics">
+                    <div className="metric-card">
+                        <h3>$65,640</h3>
+                        <p>Total Revenue</p>
+                    </div>
+                    <div className="metric-card">
+                        <h3>3,250</h3>
+                        <p>Total Orders</p>
+                    </div>
+                    <div className="metric-card">
+                        <h3>1,500</h3>
+                        <p>New Customers</p>
+                    </div>
+                </div>
             </div>
-            <div className="last-week">
-              <p>Last Week</p>
-              <p>41.05k</p>
+
+            {/* Sales Performance Chart */}
+            <div className="sales-performance">
+                <h2 className="section-title">Sales Performance</h2>
+                <ResponsiveContainer width="100%" height={300}>
+                    <BarChart data={salesData}>
+                        <XAxis dataKey="month" />
+                        <YAxis />
+                        <Tooltip />
+                        <Bar dataKey="revenue" fill="#8884d8" />
+                    </BarChart>
+                </ResponsiveContainer>
             </div>
-          </div>
-          <button className="view-details-button">View Details</button>
-        </div>
-      </div>
 
-      {/* Sessions by Country */}
-      <div className="lower-card">
-        <div className="card-header">Sessions by Country</div>
-        <div className="card-body sessions">
-          <img
-            src="https://www.mapsofworld.com/style_2019/images/world-map.png?v:1"
-            alt="World Map"
-            className="map-image"
-          />
-          <div className="session-stats">
-            <div className="this-week">
-              <p>This Week</p>
-              <p>{countryData[0].sessions}k</p>
+            {/* Products Section */}
+            <div className="products">
+                <h2 className="section-title">Products</h2>
+                <div className="product-list">
+                    {products.map((product, index) => (
+                        <div key={index} className="product-item">
+                            <span>{product.name}</span>
+                            <span>{product.price}</span>
+                            <span>{product.stock} in stock</span>
+                        </div>
+                    ))}
+                </div>
             </div>
-            <div className="last-week">
-              <p>Last Week</p>
-              <p>{countryData[0].lastWeekSessions}k</p>
+
+            {/* Categories Section */}
+            <div className="categories">
+                <h2 className="section-title">Categories</h2>
+                <div className="category-list">
+                    {categories.map((category, index) => (
+                        <span key={index} className="category-item">{category}</span>
+                    ))}
+                </div>
             </div>
-          </div>
+
+            {/* Orders Section */}
+            <div className="recent-orders">
+                <h2 className="section-title">Recent Orders</h2>
+                <div className="orders-list">
+                    {orders.map((order, index) => (
+                        <div key={index} className="order-item">
+                            <span>{order.id}</span>
+                            <span>{order.customer}</span>
+                            <span>{order.amount}</span>
+                            <span className={`status ${order.status.toLowerCase()}`}>{order.status}</span>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* Vendors Section */}
+            <div className="vendors">
+                <h2 className="section-title">Top Vendors</h2>
+                <div className="vendor-list">
+                    {vendors.map((vendor, index) => (
+                        <div key={index} className="vendor-item">
+                            <span>{vendor.name}</span>
+                            <span>{vendor.totalSales}</span>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* Blogs Section */}
+            <div className="blogs">
+                <h2 className="section-title">Recent Blog Posts</h2>
+                <div className="blog-list">
+                    {blogs.map((blog, index) => (
+                        <div key={index} className="blog-item">
+                            <span>{blog.title}</span>
+                            <span>by {blog.author} - {blog.date}</span>
+                        </div>
+                    ))}
+                </div>
+            </div>
         </div>
-      </div>
-
-      {/* Top Pages */}
-      <div className="lower-card">
-        <div className="card-header top-pages-header">
-          Top Pages
-          <button className="view-all-button">View All</button>
-        </div>
-        <div className="card-body top-pages">
-          <table className="top-pages-table">
-            <thead>
-              <tr>
-                <th>Page Path</th>
-                <th>Page Views</th>
-                <th>Exit</th>
-              </tr>
-            </thead>
-            <tbody>
-              {pageData.map((page, index) => (
-                <tr key={index}>
-                  <td>{page.path}</td>
-                  <td>{page.views}</td>
-                  <td className="exit-rate">{page.exit}%</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-          <div className="table-scroll-bar">
-            <div className="scroll-thumb"></div>
-          </div>
-        </div>
-        
-      </div>
-
-    </div>
-    <div className="order-table-container">
-      <div className="header">
-        <h2>Recent Orders</h2>
-        <button className="create-order-button">+ Create Order</button>
-      </div>
-
-      <table className="order-table">
-        <thead>
-          <tr>
-            <th>Order ID.</th>
-            <th>Date</th>
-            <th>Product</th>
-            <th>Customer Name</th>
-            <th>Email ID</th>
-            <th>Phone No.</th>
-            <th>Address</th>
-            <th>Payment Type</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          {orders.map((order) => (
-            <tr key={order.orderId}>
-              <td>{order.orderId}</td>
-              <td>{order.date}</td>
-              <td><img src={order.productImage} alt={order.product} /></td>
-              <td>{order.customerName}</td>
-              <td>{order.emailId}</td>
-              <td>{order.phoneNo}</td>
-              <td>{order.address}</td>
-              <td>{order.paymentType}</td>
-              <td>
-                <span className={`status ${order.status.toLowerCase()}`}></span>
-                {order.status}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-
-      <div className="pagination">
-        <p>Showing 5 of 19 orders</p>
-        <div className="pagination-buttons">
-          <button>←</button>
-          <button className="active">1</button>
-          <button>2</button>
-          <button>→</button>
-        </div>
-      </div>
-
-      <div className="footer">
-        <p>2025 © Larkon. Crafted by ❤️ Techzaa</p>
-      </div>
-    </div>
-    </div>
-  );
+    );
 };
 
-export default DashboardView;
+export default Dashboard;

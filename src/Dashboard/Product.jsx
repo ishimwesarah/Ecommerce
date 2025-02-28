@@ -83,7 +83,7 @@ const ProductList = () => {
       <div className="header">
         <h2>All Product List</h2>
         <div className="header-actions">
-          <button className="add-product-button">Add Product</button>
+          <button className="add-product-buttony">Add Product</button>
           <select className="month-select">
             <option>This Month</option>
           </select>

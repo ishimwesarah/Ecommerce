@@ -1,0 +1,211 @@
+/* CategoryList.css */
+
+/* General Container */
+.category-list-containers {
+    width: 80%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    margin-left: 20%;
+    padding-top: 20%;
+}
+
+/* Responsive Container */
+@media (max-width: 768px) {
+    .category-list-containers {
+        width: 90%;
+        margin-left: 5%;
+        padding: 15px;
+        padding-top: 10%;
+    }
+}
+
+/* Top Categories Styles */
+.top-categoriess {
+    display: flex;
+    justify-content: space-around; /* Or use space-between for more separation */
+    margin-bottom: 20px;
+    margin-top: -20%;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.category-cards {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    width: 200px; /* Adjust as needed */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    margin: 10px; /* Add spacing between cards */
+}
+
+/* Responsive Top Categories */
+@media (max-width: 768px) {
+    .category-cards {
+        width: 45%; /* Adjust to fit two cards per row */
+    }
+}
+
+@media (max-width: 480px) {
+    .category-cards {
+        width: 90%; /* Full width for small screens */
+    }
+}
+
+/* Category Image Container */
+.category-image-containers {
+    background-color: #f0f8ff; /* A light background */
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 8px; /* Spacing between image and text */
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+}
+
+.category-cards img {
+    width: 70px; /* Adjust size as needed */
+    height: 70px; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits without distortion */
+}
+
+.category-names {
+    font-size: 14px;
+    color: #333;
+}
+
+/* All Categories Styles (Table) */
+.all-categories-sections {
+    /* Styles for the section containing the table */
+}
+
+/* Responsive Table Section */
+@media (max-width: 768px) {
+    .category-tables {
+        display: block;
+        overflow-x: auto; /* Enable horizontal scrolling for tables */
+    }
+}
+
+.headers {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.headers h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+}
+
+.add-product-buttons {
+    background-color: #2f557b;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+    margin-right: 10px;
+    width: 100px;
+    align-items: center;
+}
+
+.add-product-button:hover {
+    background-color: #2f557b;
+}
+
+/* Month Select Dropdown */
+.month-selects {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #555;
+    background-color: #fff;
+}
+
+.category-tables {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.category-tables th,
+.category-tables td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+    color: #555;
+}
+
+.category-tables th {
+    font-weight: 500;
+    color: #777;
+}
+
+.category-tables tbody tr:hover {
+    background-color: #c8d0fa;
+}
+
+.category-infos {
+    display: flex;
+    align-items: center;
+}
+
+.category-infos img {
+    width: 30px;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+
+.actionss {
+    text-align: center;
+}
+
+.action-buttons {
+    background-color: #c8d0fa;
+    color: #2f557b;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 8px;
+    margin: 0 3px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.action-buttons:hover {
+    background-color: #ffe5db;
+}
+
+/* Font Awesome Icons */
+.fa {
+    font-size: 14px;
+    color: #2f557b;
+}
+
+/* Responsive Adjustments for Small Screens */
+@media (max-width: 480px) {
+    .headers {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .add-product-buttons {
+        width: 100%; /* Full width for buttons on small screens */
+        margin-bottom: 10px;
+    }
+
+    .month-selects {
+        width: 100%; /* Full width for dropdowns */
+    }
+}
